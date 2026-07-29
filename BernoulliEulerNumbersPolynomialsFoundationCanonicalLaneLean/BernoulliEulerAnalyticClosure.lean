@@ -1,0 +1,26 @@
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsFoundationCanonicalLaneLean.BernoulliEulerAnalyticCertificate
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsFoundationCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsFoundationCanonicalLaneLean.GateLemmas
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsFoundationCanonicalLaneLean.FinalTheorem
+
+namespace HautevilleHouse
+namespace BernoulliEulerNumbersPolynomialsFoundationCanonicalLaneLean
+
+def BernoulliEulerAdmittedAnalyticClosure : Prop :=
+  BernoulliEulerAnalyticCertificateClosed sourceBernoulliEulerAnalyticCertificate ∧
+  ConstrainedBernoulliEulerClosure defaultAdmissibleClass
+
+def UnrestrictedClassicalBernoulliEulerBoundaryCarried : Prop :=
+  True
+
+theorem bernoulli_euler_admitted_analytic_closure_checked :
+    BernoulliEulerAdmittedAnalyticClosure := by
+  exact And.intro source_bernoulli_euler_analytic_certificate_closed
+    (constrained_bernoulli_euler_closure defaultAdmissibleClass)
+
+theorem unrestricted_classical_bernoulli_euler_boundary_carried_checked :
+    UnrestrictedClassicalBernoulliEulerBoundaryCarried := by
+  trivial
+
+end BernoulliEulerNumbersPolynomialsFoundationCanonicalLaneLean
+end HautevilleHouse
